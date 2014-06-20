@@ -8,7 +8,7 @@
   "contributors": [],
   "dependencies": {
     "deployd": ">= 0",
-    "commander": "^2.2.0"
+    "commander": "2.2.0"
   },
   "scripts": {
     "start": "node server"
