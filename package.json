@@ -20,6 +20,6 @@
     "logfmt": "^1.1.2",
     "express": "^4.4.3",
     "mongoose": "^3.8.12",
-    "mongoose-cache": "^0.1.0"
+    "memory-cache": "0.0.5"
   }
 }
