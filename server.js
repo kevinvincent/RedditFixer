@@ -1,33 +1,32 @@
-// require deployd
 var deployd = require('deployd');
 
-// configure database etc. 
-var server = deployd({
-  port: process.env.PORT || 5000,
-  env: 'production',
-  db: {
-    host: 'ds031968.mongolab.com',
-    port: 31968,
-    name: 'heroku_app26563125',
-    credentials: {
-      username: 'kevinsundar',
-      password: 'kevgodks'
+// on heroku must use port from env
+var port = process.env.PORT || 3000;
+
+var url = require('url');
+var db_url = url.parse(
+    process.env.MONGOHQ_URL || "mongodb://:@localhost:27017/my_db_name");
+
+var options = {
+    port: port,
+    db: {
+        "host": db_url.hostname,
+        "port": parseInt(db_url.port),
+        "name": db_url.pathname.slice(1),
+        "credentials": {
+            "username": db_url.auth.split(':')[0],
+            "password": db_url.auth.split(':')[1]
+        }
     }
-  }
-});
+};
 
-// heroku requires these settings for sockets to work
-server.sockets.manager.settings.transports = ["xhr-polling"];
-
-// start the server
+var server = deployd(options);
 server.listen();
 
-// debug
 server.on('listening', function() {
-  console.log("Server is listening on port: " + process.env.PORT);
+  console.log("Server is listening on " + port);
 });
 
-// Deployd requires this
 server.on('error', function(err) {
   console.error(err);
   process.nextTick(function() { // Give the server a chance to return an error
