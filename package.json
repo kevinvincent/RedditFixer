@@ -1,21 +1,26 @@
 {
-  "name": "app_name",
-  "version": "0.0.1",
-  "description": "Super awesome app",
-  "keywords": [],
-  "homepage": "",
-  "author": "You!",
-  "contributors": [],
+  "name": "redditfixerserver",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
   "dependencies": {
-    "deployd": ">= 0",
-    "commander": "2.2.0"
+    "mongodb": "~1.4.7",
+    "mongoose": "~3.8.12",
+    "express": "^4.4.3"
   },
+  "devDependencies": {},
   "scripts": {
-    "start": "node server"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "engines": {
-    "node": "0.8.x",
-    "npm": "1.2.x"
+  "repository": {
+    "type": "git",
+    "url": "https://gist.github.com/5373247.git"
   },
-  "license": "MIT"
+  "author": "kevin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gist.github.com/5373247"
+  },
+  "homepage": "https://gist.github.com/5373247"
 }
