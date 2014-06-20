@@ -6,12 +6,12 @@ var server = deployd({
   port: process.env.PORT || 5000,
   env: 'production',
   db: {
-    host: 'something.mongolab.com',
-    port: 27857,
-    name: 'database_name',
+    host: 'ds031968.mongolab.com',
+    port: 31968,
+    name: 'heroku_app26563125',
     credentials: {
-      username: 'username',
-      password: 'password'
+      username: 'kevinsundar',
+      password: 'kevgodks'
     }
   }
 });
