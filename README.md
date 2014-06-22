@@ -6,7 +6,6 @@ Reddit Votify is a free extension that works to bring back upvote and downvote c
 * Firefox (working on it now)
 * Opera (submitted to store, waiting approval)
 
-Chrome guys please dont hurt me :) - I'm one of your kind
 
 Once you install Votify your votes will be recorded and visible to other Votify users. So make your votes count and install it! - You'll probably only see (0|0) for now until more people start using it! Let others know!
 
