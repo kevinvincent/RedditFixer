@@ -1,31 +1,40 @@
-##Skeleton Chrome Extension w/ fancy-settings
+**What is it?**
+______
+Reddit Votify is a free extension that works to bring back upvote and downvote counts. The more people that use Votify, the more upvote and downvote counts we can track as a community - All it takes is 3 clicks to install!
 
-###What is this?
-This Chrome extension is an extension bootstrap, a template so to speak. All you need to do is edit some values in the manifest.json file, modify which options you want your extension to have through fancy-settings/source/manifest.js and add your extension code. There's a blog post explaining it [here](http://www.bitfalls.com/2012/11/chromeskel-chrome-extension.html).
+* [Chrome DOWNLOAD HERE](https://chrome.google.com/webstore/detail/reddit-votify/bbpkagenmpdclgfmaapobkjoglngfdca?hl=en&gl=US)
+* Firefox (working on it now)
+* Opera (submitted to store, waiting approval)
 
-The skeleton extension is usable as is (albeit utterly useless) and can be installed and tried out even in this very basic form. Just download the latest version of Chrome or Chromium and set it to developer mode under Settings, then Load Unpacked Extension and select the folder that contains this file.
+Chrome guys please dont hurt me :) - I'm one of your kind
 
-This skeleton extension will be updated regularly to the newest manifest version and rules published by Google.
+Once you install Votify your votes will be recorded and visible to other Votify users. So make your votes count and install it! - You'll probably only see (0|0) for now until more people start using it! Let others know!
 
-###What does this package contain?
+**How does it work?**
+____
+Votify hooks into the upvote and downvote buttons on every page and records your votes in addition to sending them to Reddit. When others view that submission or comment, we fetch upvotes and downvotes from other users and display them.
 
-- The usual LICENSE.md and README.md files
-- Sample icons in all suggested sizes: 19px and 38px due to [this](http://developer.chrome.com/extensions/browserAction.html#icon) followed by 16px for the favicon, 48px for the settings screen and 128px for the Chrome Web Store. Replace these icons with your own icons of the same size.
-- Manifest.json file with some preconfigured sample values, mostly taken from [here](http://developer.chrome.com/extensions/manifest.html). Refer to linked page to add more needed values.
-- autoincluded minified latest jQuery. Remove in manifest.json if not needed.
-- [fancy-settings](https://github.com/zealotrunner/fancy-settings) with the default manifest. Remove the options_page key from the main manifest.json if your extension won't have any options
-- background.html [background page](http://developer.chrome.com/extensions/background_pages.html) which includes the initial background script under scripts/background.js
-- scripts/background.js which initializes the page action icon and does nothing else
-- scripts/main.js [content script](http://developer.chrome.com/extensions/content_scripts.html) which is run at document_idle (edit in manuscript if needed) and displays a greeting message in the console.
-- fragments/popup.html is an html popup file that opens when the page action is clicked (the extension icon in the address bar). You can edit it, or remove it completely. Please note that chrome.pageAction.onClicked will not fire if there is a popup defined - to make pageAction react to clicks, remove the popup, or add actions to the popup itself.
+**Woah! What else does it do?**
+____
+Since we effectively bypass reddit's vote counting system, Votify offers the following additional optional features:
 
-###Can I use this commercially?
-Yeah, look at LICENSE
+* NO vote fuzzing
+* NO "score hidden"
+ 
+**What will it do?**
+____
+Here are some features that are in the pipeline:
 
-###Any tutorials and/or examples available?
-Yeah, [here](http://www.bitfalls.com/search/label/Chrome%20Development)
+* Combining '% like it' info and tracked upvotes/downvotes to get very accurate estimates
+* Live updating of upvotes and downvotes (no page reloads - watch live as comments and submissions are voted on)
+* Hopefully integrating with RES - if you're a RES developer who's reading this please pm me :) I'd love to talk about integrating Votify's codebase
 
-###How can I contribute?
-Keep it up to date. Add some more options that don't complicate things for the user. Write examples and let me know where you used this Skeleton extension, I'll link to them here. Anything helps.
+**Other Stuff**
+____
+* Privacy - with something like this privacy is a huge concern. Therefore the server's source code will soon be released as soon as I clean up some of the private keys.
+* Network Traffic - Votify batches requests and does NOT make a request for every single item. It sends batches of things to the server in an attempt to reduce network traffic. It also lazy loads upvotes and downvotes counts and caches them locally whenever possible.
+* Imperfect Data - as it is right now, Votify obviously will not represent Reddit's overall opinion. This is why a feature to combine '% like it' info and tracked upvotes/downvotes is in the pipeline to get very accurate estimates.
+* Reliability - if the Votify server goes down then Votify wont do anything or break anything - it will silently fail. Votify's server runs on Heroku and is written in Node.js so it's completely scalable and should be able to handle tons of traffic.
+* Going against the admins - ok, I agree that the Reddit admin's probably wont like this but Reddit is at it highest level an online community whose thoughts and suggestions should be taken into consideration
 
-[![Analytics](https://ga-beacon.appspot.com/UA-46899860-1/chromeskel_a/readme)](https://github.com/igrigorik/ga-beacon)
+Hope you guys like it :)
