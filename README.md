@@ -1,8 +1,10 @@
 Reddit Votify
 ========
 
-[DOWNLOAD for chrome HERE](https://chrome.google.com/webstore/detail/reddit-votify/bbpkagenmpdclgfmaapobkjoglngfdca)
+* [DOWNLOAD for chrome HERE](https://chrome.google.com/webstore/detail/reddit-votify/bbpkagenmpdclgfmaapobkjoglngfdca)
 **MAKE SURE YOU UPDATE IF YOU ALREADY INSTALLED IT**
+* Opera is awaiting approval
+* Firefox will be done in the next couple of days
 
 What is it?
 ----------
