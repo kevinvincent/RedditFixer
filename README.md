@@ -1,39 +1,39 @@
-**What is it?**
+
+[DOWNLOAD for chrome HERE](https://chrome.google.com/webstore/detail/reddit-votify/bbpkagenmpdclgfmaapobkjoglngfdca)
+**MAKE SURE YOU UPDATE IF YOU ALREADY INSTALLED IT**
 ______
-Reddit Votify is a free extension that works to bring back upvote and downvote counts. The more people that use Votify, the more upvote and downvote counts we can track as a community - All it takes is 3 clicks to install!
 
-* [Chrome DOWNLOAD HERE](https://chrome.google.com/webstore/detail/reddit-votify/bbpkagenmpdclgfmaapobkjoglngfdca?hl=en&gl=US)
-* Firefox (working on it now)
-* Opera (submitted to store, waiting approval)
+**TL;DR: We understand your concerns and are changing how it works - NO personally identifiable tracking**
+
+If you already installed the extension, you will see (0|0) for now. Updates are coming by the end of today!
+______
 
 
-Once you install Votify your votes will be recorded and visible to other Votify users. So make your votes count and install it! - You'll probably only see (0|0) for now until more people start using it! Let others know!
+Many people had privacy, network, and community related concerns about the original extension which tracked votes on comments. Therefore Reddit Votify is pivoting and will now show upvotes and downvotes of submissions only on the main page of subreddits.
 
-**How does it work?**
-____
-Votify hooks into the upvote and downvote buttons on every page and records your votes in addition to sending them to Reddit. When others view that submission or comment, we fetch upvotes and downvotes from other users and display them.
 
-**Woah! What else does it do?**
-____
-Since we effectively bypass reddit's vote counting system, Votify offers the following additional optional features:
+This is how it works:
 
-* NO vote fuzzing
-* NO "score hidden"
- 
-**What will it do?**
-____
-Here are some features that are in the pipeline:
+* Whenever a user visits a post's page we record the '% like this' and total score
 
-* Combining '% like it' info and tracked upvotes/downvotes to get very accurate estimates
-* Live updating of upvotes and downvotes (no page reloads - watch live as comments and submissions are voted on)
-* Hopefully integrating with RES - if you're a RES developer who's reading this please pm me :) I'd love to talk about integrating Votify's codebase
+ > No personally identifying information will be sent, you can look at the developer console of chrome yourself to confirm. All we will send is the thing id, percentage, and score
+* We essentially crowdsource the '% like this' and total score for all submissions and store them elsewhere after computing the upvotes and downvotes using an algorithm (thanks to /u/bxtk for the code samples)
+* We then display these on a subreddit's page
 
-**Other Stuff**
-____
-* Privacy - with something like this privacy is a huge concern. Therefore the server's source code will soon be released as soon as I clean up some of the private keys.
-* Network Traffic - Votify batches requests and does NOT make a request for every single item. It sends batches of things to the server in an attempt to reduce network traffic. It also lazy loads upvotes and downvotes counts and caches them locally whenever possible.
-* Imperfect Data - as it is right now, Votify obviously will not represent Reddit's overall opinion. This is why a feature to combine '% like it' info and tracked upvotes/downvotes is in the pipeline to get very accurate estimates.
-* Reliability - if the Votify server goes down then Votify wont do anything or break anything - it will silently fail. Votify's server runs on Heroku and is written in Node.js so it's completely scalable and should be able to handle tons of traffic.
-* Going against the admins - ok, I agree that the Reddit admin's probably wont like this but Reddit is at it highest level an online community whose thoughts and suggestions should be taken into consideration
+Just to reiterate **the comments below refer to the original plugin**; the update (which will be released later today) will stop tracking votes and will just perform the features stated above. 
 
-Hope you guys like it :)
+>*The new plugin will NOT need a critical mass of users to begin working. Upon updating, you will see upvote and downvote counts for all submissions on a subreddit's front page that are calculated with the formula.*
+
+This is pretty much like the Greasemonkey script posted here yesterday except we send that data elsewhere so that a user doesn't need to load every single page in order to get upvote and downvote counts - we can send just one request to our server to get crowdsourced data. This mitigates ALL privacy concerns and reduces network load, browser performance hits, etc.
+
+*For all those who voiced concerns, we understand them and have taken them into serious consideration in an attempt to help the community not hurt it :)*
+
+---
+We would still love to include this into RES if people agree. It's not completely necessary since it doesn't need a ton of users to work but it would be a nice optional feature in our opinion.
+---
+
+/u/honestbleeps in his edit to his sticky post on /r/Enhancement says:
+
+"With regards to "why not use the '% like it' info to calculate the real votes" question we keep getting -- that info is only available on the comments page. We can't pull that data to post listings pages without loads of API requests - it's not technically feasible/reasonable, sorry. We could show it on the comments page, but we can't show it on your front page or on any other post listing pages."
+
+Votify basically moves that from the comment page to the front page - solving that "technical challenge" by tracking %'s and scores elsewhere and offloading the hard work to a server so that only one api request is needed.
