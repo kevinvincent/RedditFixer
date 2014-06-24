@@ -1,12 +1,15 @@
 Reddit Votify
-_____
+========
 
 [DOWNLOAD for chrome HERE](https://chrome.google.com/webstore/detail/reddit-votify/bbpkagenmpdclgfmaapobkjoglngfdca)
 **MAKE SURE YOU UPDATE IF YOU ALREADY INSTALLED IT**
 
+What is it?
+----------
 Reddit Votify is a chrome/opera/soon-to-be firefox extension that brings back highly accurate estimated upvotes and downvotes to the front page of every subreddit (same algorithm that RES will use in it's next release - though those will only display on a submission's page itself NOT on the main page)
 
-This is how it works:
+This is how it works
+----------
 
 * Whenever a user visits a post's page we record the '% like this' and total score
 
@@ -28,6 +31,6 @@ We would still love to include this into RES if people agree. It's not completel
 
 /u/honestbleeps in his edit to his sticky post on /r/Enhancement says:
 
-"With regards to "why not use the '% like it' info to calculate the real votes" question we keep getting -- that info is only available on the comments page. We can't pull that data to post listings pages without loads of API requests - it's not technically feasible/reasonable, sorry. We could show it on the comments page, but we can't show it on your front page or on any other post listing pages."
+>"With regards to "why not use the '% like it' info to calculate the real votes" question we keep getting -- that info is only available on the comments page. We can't pull that data to post listings pages without loads of API requests - it's not technically feasible/reasonable, sorry. We could show it on the comments page, but we can't show it on your front page or on any other post listing pages."
 
 Votify basically moves that from the comment page to the front page - solving that "technical challenge" by tracking %'s and scores elsewhere and offloading the hard work to a server so that only one api request is needed.
