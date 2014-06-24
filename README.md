@@ -1,16 +1,10 @@
+Reddit Votify
+_____
 
 [DOWNLOAD for chrome HERE](https://chrome.google.com/webstore/detail/reddit-votify/bbpkagenmpdclgfmaapobkjoglngfdca)
 **MAKE SURE YOU UPDATE IF YOU ALREADY INSTALLED IT**
-______
 
-**TL;DR: We understand your concerns and are changing how it works - NO personally identifiable tracking**
-
-If you already installed the extension, you will see (0|0) for now. Updates are coming by the end of today!
-______
-
-
-Many people had privacy, network, and community related concerns about the original extension which tracked votes on comments. Therefore Reddit Votify is pivoting and will now show upvotes and downvotes of submissions only on the main page of subreddits.
-
+Reddit Votify is a chrome/opera/soon-to-be firefox extension that brings back highly accurate estimated upvotes and downvotes to the front page of every subreddit (same algorithm that RES will use in it's next release - though those will only display on a submission's page itself NOT on the main page)
 
 This is how it works:
 
@@ -18,7 +12,7 @@ This is how it works:
 
  > No personally identifying information will be sent, you can look at the developer console of chrome yourself to confirm. All we will send is the thing id, percentage, and score
 * We essentially crowdsource the '% like this' and total score for all submissions and store them elsewhere after computing the upvotes and downvotes using an algorithm (thanks to /u/bxtk for the code samples)
-* We then display these on a subreddit's page
+* We then display these on a subreddit's page when other's view that submission
 
 Just to reiterate **the comments below refer to the original plugin**; the update (which will be released later today) will stop tracking votes and will just perform the features stated above. 
 
